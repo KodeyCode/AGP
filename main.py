@@ -9,17 +9,11 @@ def get(repo):
         req = requests.get(url)
         print('Done...')
         f = open(argv[2].split('/')[1]+'.alf','w')
-        cont = str(req.content)
-        print('1: '+cont)
         cont = str(req.content).replace("b'",'',1)
-        print('2: '+cont)
         cont = cont[:-1]
-        print('3: '+cont)
         cont = cont.replace('\\n','\n')
-        print('4: '+cont)
         cont = cont.replace("\\'","'")
-        print('5: '+cont)
-        print('Writing file...')
+        print(COLOR["BLUE"]+"Writing file..."+COLOR["ENDC"])
         f.write(cont)
         print(COLOR["GREEN"]+'Done! You have now installed "'+argv[2]+'"!'+COLOR["ENDC"])
     except Exception as error:
