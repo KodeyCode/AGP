@@ -8,7 +8,7 @@ def get(repo):
         print(COLOR['BLUE']+'Connecting to ['+url+']'+COLOR['ENDC'])
         req = requests.get(url)
         print('Done...')
-        f = open(argv[2].split('/')[1]+'.alf','w')
+        f = open('~/Desktop/Alfredo3/lib/argv[2].split('/')[1]+'.alf','w')
         cont = str(req.content).replace("b'",'',1)
         cont = cont[:-1]
         cont = cont.replace('\\n','\n')
